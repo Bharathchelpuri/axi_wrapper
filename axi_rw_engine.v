@@ -54,11 +54,12 @@ module axi_rw_engine
 
 // FSM State Encoding
 
-localparam IDLE       = 3'd0;
-localparam WRITE_REQ  = 3'd1;
-localparam WRITE_RESP = 3'd2;
-localparam READ_REQ   = 3'd3;
-localparam READ_RESP  = 3'd4;
+localparam IDLE           = 3'd0;
+localparam WRITE_REQ      = 3'd1;
+localparam WRITE_RESPONSE = 3'd2;
+localparam READ_REQ       = 3'd3;
+localparam READ_RESPONSE  = 3'd4;
+localparam WAIT_STATE        = 3'd5 ;
 
 // Registers
 
@@ -158,15 +159,15 @@ case(state)
     begin
 
         if(aw_done && w_done)
-            next_state = WRITE_RESP;
+            next_state = WRITE_RESPONSE;
 
     end
 
-    WRITE_RESP:
+    WRITE_RESPONSE:
     begin
 
         if(axi_bvalid && axi_bready)
-            next_state = IDLE;
+            next_state = WAIT_STATE;
 
     end
 
@@ -174,17 +175,20 @@ case(state)
     begin
 
         if(axi_arvalid && axi_arready)
-            next_state = READ_RESP;
+            next_state = READ_RESPONSE;
 
     end
 
-    READ_RESP:
+    READ_RESPONSE:
     begin
 
         if(axi_rvalid && axi_rready)
-            next_state = IDLE;
+            next_state = WAIT_STATE;
 
     end
+
+    WAIT_STATE:   
+        next_state = IDLE;
 
     default:
         next_state = IDLE;
@@ -231,7 +235,7 @@ case(state)
 
     end
 
-    WRITE_RESP:
+    WRITE_RESPONSE:
     begin
         if(axi_bvalid)
         axi_bready = 1'b1;
@@ -243,12 +247,28 @@ case(state)
         axi_arvalid = 1'b1;
     end
 
-    READ_RESP:
+    READ_RESPONSE:
     begin
         if(axi_rvalid) begin
         axi_rready = 1'b1;
     end
     end
+
+    WAIT_STATE: begin
+        axi_awaddr  = 32'd0;
+axi_awvalid = 1'b0;
+
+axi_wdata   = 32'd0;
+axi_wstrb   = 4'd0;
+axi_wvalid  = 1'b0;
+
+axi_bready  = 1'b1;
+
+axi_araddr  = 32'd0;
+axi_arvalid = 1'b0;
+
+axi_rready  = 1'b1;
+end
 
 endcase
 
@@ -262,13 +282,13 @@ assign write_resp = axi_bresp;
 
 // Transaction Status
 
-assign read_valid_out = (state == READ_RESP)  ? axi_rvalid : 1'b0;
+assign read_valid_out = (state == READ_RESPONSE)  ? axi_rvalid : 1'b0;
 
-assign read_ready_out = (state == READ_RESP)  ? axi_rready : 1'b0; 
+assign read_ready_out = (state == READ_RESPONSE)  ? axi_rready : 1'b0; 
 
-assign write_valid_out = (state == WRITE_RESP) ? axi_bvalid : 1'b0;
+assign write_valid_out = (state == WRITE_RESPONSE) ? axi_bvalid : 1'b0;
 
-assign write_ready_out = (state == WRITE_RESP) ? axi_bready : 1'b0;
+assign write_ready_out = (state == WRITE_RESPONSE) ? axi_bready : 1'b0;
 
 
 
