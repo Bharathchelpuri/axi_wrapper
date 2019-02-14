@@ -1,0 +1,64 @@
+
+#
+# Mnemonic Maps
+#
+mmap new -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+array unset createdGroup
+array set createdGroup {}
+set id [waveform add -signals [subst  {
+	{[format {tb_axi_master_read_wrapper.DUT.clk}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_axi_master_read_wrapper.DUT.rst_n}]}
+	} ]]
+set id [waveform add -cdivider divider]
+set id [waveform add -signals [subst  {
+	{[format {tb_axi_master_read_wrapper.DUT.in_address[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_axi_master_read_wrapper.DUT.in_valid}]}
+	} ]]
+set id [waveform add -cdivider divider]
+set id [waveform add -signals [subst  {
+	{[format {tb_axi_master_read_wrapper.DUT.present_state[1:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_axi_master_read_wrapper.DUT.next_state[1:0]}]}
+	} ]]
+set id [waveform add -cdivider divider]
+set id [waveform add -signals [subst  {
+	{[format {tb_axi_master_read_wrapper.DUT.M_AXI_ARADDR[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_axi_master_read_wrapper.DUT.M_AXI_ARVALID}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_axi_master_read_wrapper.DUT.M_AXI_ARREADY}]}
+	} ]]
+set id [waveform add -cdivider divider]
+set id [waveform add -signals [subst  {
+	{[format {tb_axi_master_read_wrapper.DUT.M_AXI_RDATA[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_axi_master_read_wrapper.DUT.M_AXI_RVALID}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_axi_master_read_wrapper.DUT.M_AXI_RREADY}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_axi_master_read_wrapper.DUT.M_AXI_RRESP[2:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_axi_master_read_wrapper.DUT.read_data_out[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_axi_master_read_wrapper.DUT.read_resp_out[2:0]}]}
+	} ]]
+
+waveform xview limits 0 300ns
