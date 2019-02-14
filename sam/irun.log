@@ -1,0 +1,105 @@
+irun(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+TOOL:	irun(64)	15.20-s051: Started on Feb 10, 2019 at 10:09:59 IST
+irun
+	-access +rwc
+	axi_rw_engine.v
+	axi_wrapper_top.v
+DEFINE gpdk045		$ANALOG/45nm/gpdk045		
+|
+irun: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,15): cds.lib Permission denied '/tools/cadence/FOUNDRY/analog/45nm/gpdk045' (cds.lib command ignored).
+DEFINE rfLib_new	/home/install/FOUNDRY/rfLib_new
+|
+irun: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,19): cds.lib Invalid path '/home/install/FOUNDRY/rfLib_new' (cds.lib command ignored).
+DEFINE gpdk045		$ANALOG/45nm/gpdk045		
+|
+irun: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,15): cds.lib Permission denied '/tools/cadence/FOUNDRY/analog/45nm/gpdk045' (cds.lib command ignored).
+DEFINE rfLib_new	/home/install/FOUNDRY/rfLib_new
+|
+irun: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,19): cds.lib Invalid path '/home/install/FOUNDRY/rfLib_new' (cds.lib command ignored).
+DEFINE gpdk045		$ANALOG/45nm/gpdk045		
+|
+irun: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,15): cds.lib Permission denied '/tools/cadence/FOUNDRY/analog/45nm/gpdk045' (cds.lib command ignored).
+DEFINE rfLib_new	/home/install/FOUNDRY/rfLib_new
+|
+irun: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,19): cds.lib Invalid path '/home/install/FOUNDRY/rfLib_new' (cds.lib command ignored).
+DEFINE gpdk045		$ANALOG/45nm/gpdk045		
+|
+irun: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,15): cds.lib Permission denied '/tools/cadence/FOUNDRY/analog/45nm/gpdk045' (cds.lib command ignored).
+DEFINE rfLib_new	/home/install/FOUNDRY/rfLib_new
+|
+irun: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,19): cds.lib Invalid path '/home/install/FOUNDRY/rfLib_new' (cds.lib command ignored).
+DEFINE gpdk045		$ANALOG/45nm/gpdk045		
+|
+irun: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,15): cds.lib Permission denied '/tools/cadence/FOUNDRY/analog/45nm/gpdk045' (cds.lib command ignored).
+DEFINE rfLib_new	/home/install/FOUNDRY/rfLib_new
+|
+irun: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,19): cds.lib Invalid path '/home/install/FOUNDRY/rfLib_new' (cds.lib command ignored).
+DEFINE gpdk045		$ANALOG/45nm/gpdk045		
+|
+ncvlog: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,15): cds.lib Permission denied '/tools/cadence/FOUNDRY/analog/45nm/gpdk045' (cds.lib command ignored).
+DEFINE rfLib_new	/home/install/FOUNDRY/rfLib_new
+|
+ncvlog: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,19): cds.lib Invalid path '/home/install/FOUNDRY/rfLib_new' (cds.lib command ignored).
+file: axi_wrapper_top.v
+	module worklib.axi_wrapper_top:v
+		errors: 0, warnings: 0
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 2
+DEFINE gpdk045		$ANALOG/45nm/gpdk045		
+|
+irun: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,15): cds.lib Permission denied '/tools/cadence/FOUNDRY/analog/45nm/gpdk045' (cds.lib command ignored).
+DEFINE rfLib_new	/home/install/FOUNDRY/rfLib_new
+|
+irun: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,19): cds.lib Invalid path '/home/install/FOUNDRY/rfLib_new' (cds.lib command ignored).
+DEFINE gpdk045		$ANALOG/45nm/gpdk045		
+|
+irun: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,15): cds.lib Permission denied '/tools/cadence/FOUNDRY/analog/45nm/gpdk045' (cds.lib command ignored).
+DEFINE rfLib_new	/home/install/FOUNDRY/rfLib_new
+|
+irun: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,19): cds.lib Invalid path '/home/install/FOUNDRY/rfLib_new' (cds.lib command ignored).
+DEFINE gpdk045		$ANALOG/45nm/gpdk045		
+|
+ncelab: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,15): cds.lib Permission denied '/tools/cadence/FOUNDRY/analog/45nm/gpdk045' (cds.lib command ignored).
+DEFINE rfLib_new	/home/install/FOUNDRY/rfLib_new
+|
+ncelab: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,19): cds.lib Invalid path '/home/install/FOUNDRY/rfLib_new' (cds.lib command ignored).
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		axi_wrapper_top
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+DEFINE gpdk045		$ANALOG/45nm/gpdk045		
+|
+ncvlog_cg: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,15): cds.lib Permission denied '/tools/cadence/FOUNDRY/analog/45nm/gpdk045' (cds.lib command ignored).
+DEFINE rfLib_new	/home/install/FOUNDRY/rfLib_new
+|
+ncvlog_cg: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,19): cds.lib Invalid path '/home/install/FOUNDRY/rfLib_new' (cds.lib command ignored).
+		worklib.axi_rw_engine:v <0x3c7ed2f3>
+			streams:  18, words:  9757
+		worklib.axi_wrapper_top:v <0x4811b5b8>
+			streams:  43, words: 25163
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              2       2
+		Registers:           48      48
+		Scalar wires:        76       -
+		Vectored wires:      43       -
+		Always blocks:       14      14
+		Cont. assignments:   21      52
+		Pseudo assignments:  15      15
+	Writing initial simulation snapshot: worklib.axi_wrapper_top:v
+DEFINE gpdk045		$ANALOG/45nm/gpdk045		
+|
+ncsim: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,15): cds.lib Permission denied '/tools/cadence/FOUNDRY/analog/45nm/gpdk045' (cds.lib command ignored).
+DEFINE rfLib_new	/home/install/FOUNDRY/rfLib_new
+|
+ncsim: *W,DLCPTH (/tools/cadence/FOUNDRY/cds.lib,19): cds.lib Invalid path '/home/install/FOUNDRY/rfLib_new' (cds.lib command ignored).
+Loading snapshot worklib.axi_wrapper_top:v .................... Done
+ncsim> source /tools/cadence/INCISIVE152/tools/inca/files/ncsimrc
+ncsim> run
+ncsim: *W,RNQUIE: Simulation is complete.
+ncsim> exit
+TOOL:	irun(64)	15.20-s051: Exiting on Feb 10, 2019 at 10:10:00 IST  (total: 00:00:01)
